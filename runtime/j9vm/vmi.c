@@ -119,6 +119,7 @@ void JNICALL
 JVM_Halt(jint exitCode)
 {
 	ENSURE_VMI();
+	printf ("\n----------------------------- Java 11 JVM_Halt exitCode=%d\n", exitCode);
 	g_VMI->JVM_Halt(exitCode);
 }
 
