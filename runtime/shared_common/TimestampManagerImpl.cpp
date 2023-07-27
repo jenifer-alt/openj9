@@ -83,6 +83,7 @@ SH_TimestampManagerImpl::localCheckTimeStamp(J9VMThread* currentThread, Classpat
 		Trc_SHR_TMI_LocalCheckTimestamp_Checking_Jar(currentThread, pathBufPtr);
 	}
 	if (!pathBufPtr) {
+		Trc_SHR_TMI_LocalCheckTimestamp_Checking_pathBufPtr_Missing(currentThread);
 		return TIMESTAMP_DOES_NOT_EXIST;
 	}
 	current = j9file_lastmod(pathBufPtr);
@@ -91,14 +92,18 @@ SH_TimestampManagerImpl::localCheckTimeStamp(J9VMThread* currentThread, Classpat
 	}
 	if (current == -1) {
 		if (test == -1) {
+			Trc_SHR_TMI_LocalCheckTimestamp_Checking_Case0(currentThread, current, test);
 			return TIMESTAMP_DOES_NOT_EXIST;
 		} else {
+			Trc_SHR_TMI_LocalCheckTimestamp_Checking_Case1(currentThread, current, test);
 			return TIMESTAMP_DISAPPEARED;
 		}
 	} else {
 		if (current == test) {
+			Trc_SHR_TMI_LocalCheckTimestamp_Checking_Case2(currentThread, current, test);
 			return TIMESTAMP_UNCHANGED;
 		} else {
+			Trc_SHR_TMI_LocalCheckTimestamp_Checking_Case3(currentThread, current, test);
 			return current;
 		}
 	}

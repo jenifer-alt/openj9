@@ -2992,3 +2992,16 @@ TraceExit-Exception=Trc_SHR_CMI_Update_Exit5 Overhead=1 Level=2 Template="CMI Up
 TraceExit-Exception=Trc_SHR_CMI_validate_Exit_IdentifiedMutex_Failed Overhead=1 Level=2 Template="CMI validate: Failed to acquire _identifiedMutex. Returning -1."
 TraceException=Trc_SHR_CC_changePartialPageProtection_NotDone_V1 Overhead=1 Level=1 Template="CC changePartialPageProtection: Returning without changing page protection for address %p to %s"
 TraceEvent=Trc_SHR_CC_freeBlockBytes_info NoEnv Overhead=1 Level=10 Template="CC getFreeBlockBytes: case %d, retVal %d, freeBytes %d, minAOT %d, aotBytes %d, minJIT %d, jitBytes %d"
+
+TraceExit-Exception=Trc_SHR_CM_getCachedUTFString_exit4 Overhead=1 Level=2 Template="CM getCachedUTFString: Exiting due to memory allocation failed"
+
+TraceEvent=Trc_SHR_CC_startup_setCacheInitComplete Overhead=1 Level=9 Template="CC startup: set cache initialization complete"
+TraceEvent=Trc_SHR_CC_enterWriteMutex_writerCountInc Overhead=1 Level=9 Template="CC enterWriteMutex writerCount incremented from %zu to %zu"
+TraceEvent=Trc_SHR_CC_exitWriteMutex_writerCountDec Overhead=1 Level=9 Template="CC exitWriteMutex writerCount decremented to %zu"
+TraceExit=Trc_SHR_OSC_Mmap_syncUpdates_badmsync1 NoEnv Overhead=1 Level=1 Template="SH_OSCachemmap::syncUpdates: j9mmap_msync failed with error number: %d, error message %s"
+
+TraceException=Trc_SHR_TMI_LocalCheckTimestamp_Checking_pathBufPtr_Missing Overhead=1 Level=6 Template="TMI localCheckTimestamp: pathBufPtr is NULL"
+TraceEvent=Trc_SHR_TMI_LocalCheckTimestamp_Checking_Case0 Overhead=1 Level=6 Template="TMI localCheckTimestamp case 0: current is %lld, test is %lld"
+TraceEvent=Trc_SHR_TMI_LocalCheckTimestamp_Checking_Case1 Overhead=1 Level=6 Template="TMI localCheckTimestamp case 1: current is %lld, test is %lld"
+TraceEvent=Trc_SHR_TMI_LocalCheckTimestamp_Checking_Case2 Overhead=1 Level=6 Template="TMI localCheckTimestamp case 2: current is %lld, test is %lld"
+TraceEvent=Trc_SHR_TMI_LocalCheckTimestamp_Checking_Case3 Overhead=1 Level=6 Template="TMI localCheckTimestamp case 3: current is %lld, test is %lld"
